@@ -38,7 +38,8 @@ public class Main {
         if(opt.equals("Yes") || opt.equals("yes")){
             System.out.println("Choose your transaction: ");
             System.out.println();
-            while(true){
+            transaction(newCustomer);
+            /*while(true){
                 System.out.println("Press 1 for balance enquiry");
                 System.out.println("Press 2 to credit amount");
                 System.out.println("Press 3 to withdraw amount");
@@ -98,7 +99,7 @@ public class Main {
                 } else {
                     System.out.println("Please choose a valid transaction!");
                 }
-            }
+            } */
         }
 
         if(cus.equals("existing") || cus.equals("Existing")){
@@ -106,70 +107,70 @@ public class Main {
             System.out.println("Name: "+oldCustomer.getName()+", Password: "+oldCustomer.getPassword()+", Balance: "+oldCustomer.getBalance());
             System.out.println("Choose your transaction: ");
             System.out.println();
-            while(true){
-                System.out.println("Press 1 for balance enquiry");
-                System.out.println("Press 2 to credit amount");
-                System.out.println("Press 3 to withdraw amount");
-                System.out.println("Press 4 to change password");
-                System.out.println("Press 5 to calculate interest");
-                int option = sc.nextInt();
-                String anotherTransaction = "";
-                if(option == 1){
-                    System.out.print("Please enter your password: "); String passwordForBalanceEnquiry = sc.next();
-                    String outcome = oldCustomer.fetchBalance(passwordForBalanceEnquiry);
-                    System.out.println(outcome);
-                    System.out.print("Do another transaction. Type 'Yes' or 'No': "); anotherTransaction = sc.next();
-                    if(anotherTransaction.equals("Yes") || anotherTransaction.equals("yes")){
-                        continue;
-                    }
-                    break;
-                } else if(option == 2){
-                    System.out.print("Please enter amount: "); double amountToCredit = sc.nextDouble();
-                    String outcome = oldCustomer.addMoney(amountToCredit);
-                    System.out.println(outcome);
-                    System.out.print("Do another transaction. Type 'Yes' or 'No': "); anotherTransaction = sc.next();
-                    if(anotherTransaction.equals("Yes") || anotherTransaction.equals("yes")){
-                        continue;
-                    }
-                    break;
-                } else if(option == 3){
-                    System.out.println("Please enter your password and amount:");
-                    System.out.print("Password: "); String passwordToWithdraw = sc.next();
-                    System.out.print("amount: "); double amountToWithdraw = sc.nextDouble();
-                    String outcome = oldCustomer.withdrawMoney(passwordToWithdraw, amountToWithdraw);
-                    System.out.println(outcome);
-                    System.out.print("Do another transaction. Type 'Yes' or 'No': "); anotherTransaction = sc.next();
-                    if(anotherTransaction.equals("Yes") || anotherTransaction.equals("yes")){
-                        continue;
-                    }
-                    break;
-                } else if (option == 4) {
-                    System.out.print("Enter your current password: "); String currentPassword = sc.next();
-                    System.out.print("Enter new password: "); String newPassword = sc.next();
-                    String outcome = oldCustomer.changePassword(currentPassword, newPassword);
-                    System.out.println(outcome);
-                    System.out.print("Do another transaction. Type 'Yes' or 'No': "); anotherTransaction = sc.next();
-                    if(anotherTransaction.equals("Yes") || anotherTransaction.equals("yes")){
-                        continue;
-                    }
-                    break;
-                } else if(option == 5) {
-                    System.out.print("Enter number of years: "); int year = sc.nextInt();
-                    double outcome = oldCustomer.calculateInterest(year);
-                    System.out.println("Total interest on current balance ("+oldCustomer.getBalance()+") for "+year+" years is: "+outcome);
-                    System.out.print("Do another transaction. Type 'Yes' or 'No': "); anotherTransaction = sc.next();
-                    if(anotherTransaction.equals("Yes") || anotherTransaction.equals("yes")){
-                        continue;
-                    }
-                    break;
-                } else {
-                    System.out.println("Please choose a valid transaction!");
-                }
-            }
+            transaction(oldCustomer);
         }
         System.out.println("Thank you for banking with us!");
     }
     private static void transaction(BOI customer){
-
+        while(true){
+            System.out.println("Press 1 for balance enquiry");
+            System.out.println("Press 2 to credit amount");
+            System.out.println("Press 3 to withdraw amount");
+            System.out.println("Press 4 to change password");
+            System.out.println("Press 5 to calculate interest");
+            int option = sc.nextInt();
+            String anotherTransaction = "";
+            if(option == 1){
+                System.out.print("Please enter your password: "); String passwordForBalanceEnquiry = sc.next();
+                String outcome = customer.fetchBalance(passwordForBalanceEnquiry);
+                System.out.println(outcome);
+                System.out.print("Do another transaction. Type 'Yes' or 'No': "); anotherTransaction = sc.next();
+                if(anotherTransaction.equals("Yes") || anotherTransaction.equals("yes")){
+                    continue;
+                }
+                break;
+            } else if(option == 2){
+                System.out.print("Please enter amount: "); double amountToCredit = sc.nextDouble();
+                String outcome = customer.addMoney(amountToCredit);
+                System.out.println(outcome);
+                System.out.print("Do another transaction. Type 'Yes' or 'No': "); anotherTransaction = sc.next();
+                if(anotherTransaction.equals("Yes") || anotherTransaction.equals("yes")){
+                    continue;
+                }
+                break;
+            } else if(option == 3){
+                System.out.println("Please enter your password and amount:");
+                System.out.print("Password: "); String passwordToWithdraw = sc.next();
+                System.out.print("amount: "); double amountToWithdraw = sc.nextDouble();
+                String outcome = customer.withdrawMoney(passwordToWithdraw, amountToWithdraw);
+                System.out.println(outcome);
+                System.out.print("Do another transaction. Type 'Yes' or 'No': "); anotherTransaction = sc.next();
+                if(anotherTransaction.equals("Yes") || anotherTransaction.equals("yes")){
+                    continue;
+                }
+                break;
+            } else if (option == 4) {
+                System.out.print("Enter your current password: "); String currentPassword = sc.next();
+                System.out.print("Enter new password: "); String newPassword = sc.next();
+                String outcome = customer.changePassword(currentPassword, newPassword);
+                System.out.println(outcome);
+                System.out.print("Do another transaction. Type 'Yes' or 'No': "); anotherTransaction = sc.next();
+                if(anotherTransaction.equals("Yes") || anotherTransaction.equals("yes")){
+                    continue;
+                }
+                break;
+            } else if(option == 5) {
+                System.out.print("Enter number of years: "); int year = sc.nextInt();
+                double outcome = customer.calculateInterest(year);
+                System.out.println("Total interest on current balance ("+customer.getBalance()+") for "+year+" years is: "+outcome);
+                System.out.print("Do another transaction. Type 'Yes' or 'No': "); anotherTransaction = sc.next();
+                if(anotherTransaction.equals("Yes") || anotherTransaction.equals("yes")){
+                    continue;
+                }
+                break;
+            } else {
+                System.out.println("Please choose a valid transaction!");
+            }
+        }
     }
 }
