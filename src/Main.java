@@ -39,67 +39,6 @@ public class Main {
             System.out.println("Choose your transaction: ");
             System.out.println();
             transaction(newCustomer);
-            /*while(true){
-                System.out.println("Press 1 for balance enquiry");
-                System.out.println("Press 2 to credit amount");
-                System.out.println("Press 3 to withdraw amount");
-                System.out.println("Press 4 to change password");
-                System.out.println("Press 5 to calculate interest");
-                int option = sc.nextInt();
-                String anotherTransaction = "";
-                if(option == 1){
-                    System.out.print("Please enter your password: "); String passwordForBalanceEnquiry = sc.next();
-                    String outcome = newCustomer.fetchBalance(passwordForBalanceEnquiry);
-                    System.out.println(outcome);
-                    System.out.println();
-                    System.out.print("Do another transaction. Type 'Yes' or 'No': "); anotherTransaction = sc.next();
-                    if(anotherTransaction.equals("Yes") || anotherTransaction.equals("yes")){
-                        continue;
-                    }
-                    break;
-                } else if(option == 2){
-                    System.out.print("Please enter amount: "); double amountToCredit = sc.nextDouble();
-                    String outcome = newCustomer.addMoney(amountToCredit);
-                    System.out.println(outcome);
-                    System.out.print("Do another transaction. Type 'Yes' or 'No': "); anotherTransaction = sc.next();
-                    if(anotherTransaction.equals("Yes") || anotherTransaction.equals("yes")){
-                        continue;
-                    }
-                    break;
-                } else if(option == 3){
-                    System.out.println("Please enter your password and amount:");
-                    System.out.print("Password: "); String passwordToWithdraw = sc.next();
-                    System.out.print("amount: "); double amountToWithdraw = sc.nextDouble();
-                    String outcome = newCustomer.withdrawMoney(passwordToWithdraw, amountToWithdraw);
-                    System.out.println(outcome);
-                    System.out.print("Do another transaction. Type 'Yes' or 'No': "); anotherTransaction = sc.next();
-                    if(anotherTransaction.equals("Yes") || anotherTransaction.equals("yes")){
-                        continue;
-                    }
-                    break;
-                } else if (option == 4) {
-                    System.out.print("Enter your current password: "); String currentPassword = sc.next();
-                    System.out.print("Enter new password: "); String newPassword = sc.next();
-                    String outcome = newCustomer.changePassword(currentPassword, newPassword);
-                    System.out.println(outcome);
-                    System.out.print("Do another transaction. Type 'Yes' or 'No': "); anotherTransaction = sc.next();
-                    if(anotherTransaction.equals("Yes") || anotherTransaction.equals("yes")){
-                        continue;
-                    }
-                    break;
-                } else if(option == 5) {
-                    System.out.print("Enter number of years: "); int year = sc.nextInt();
-                    double outcome = newCustomer.calculateInterest(year);
-                    System.out.println("Total interest on current balance ("+newCustomer.getBalance()+") for "+year+" years is: "+outcome);
-                    System.out.print("Do another transaction. Type 'Yes' or 'No': "); anotherTransaction = sc.next();
-                    if(anotherTransaction.equals("Yes") || anotherTransaction.equals("yes")){
-                        continue;
-                    }
-                    break;
-                } else {
-                    System.out.println("Please choose a valid transaction!");
-                }
-            } */
         }
 
         if(cus.equals("existing") || cus.equals("Existing")){
