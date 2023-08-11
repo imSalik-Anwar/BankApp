@@ -89,7 +89,7 @@ public class Main {
                 } else if(option == 5) {
                     System.out.print("Enter number of years: "); int year = sc.nextInt();
                     double outcome = cusSalik.calculateInterest(year);
-                    System.out.println("Total interest for "+year+" years is: "+outcome);
+                    System.out.println("Total interest on current balance ("+cusSalik.getBalance()+") for "+year+" years is: "+outcome);
                     System.out.print("Do another transaction. Type 'Yes' or 'No': "); anotherTransaction = sc.next();
                     if(anotherTransaction.equals("Yes") || anotherTransaction.equals("yes")){
                         continue;
@@ -156,7 +156,7 @@ public class Main {
                 } else if(option == 5) {
                     System.out.print("Enter number of years: "); int year = sc.nextInt();
                     double outcome = cusAnwar.calculateInterest(year);
-                    System.out.println("Total interest for "+year+" years is: "+outcome);
+                    System.out.println("Total interest on current balance ("+cusAnwar.getBalance()+") for "+year+" years is: "+outcome);
                     System.out.print("Do another transaction. Type 'Yes' or 'No': "); anotherTransaction = sc.next();
                     if(anotherTransaction.equals("Yes") || anotherTransaction.equals("yes")){
                         continue;
